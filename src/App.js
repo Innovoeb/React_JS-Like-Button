@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import './like.css';
 
 class App extends Component {
+
+  state = {
+    likes: 0,
+    grammer: "likes"
+  }
+
+  addLike = () => {
+    this.setState({
+      likes: this.state.likes + 1,
+    })
+    if (this.state.likes === 0) {
+      this.setState({
+        grammer: this.state.grammer = "like"
+      })
+    } else {
+      this.setState({
+        grammer: this.state.grammer = "likes"
+      })
+    }
+
+    console.log(this.state.likes)
+  };
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div id="like-button">
+        <button onClick={this.addLike}>{this.state.likes} {this.state.grammer}</button>
       </div>
     );
   }

@@ -1,0 +1,15 @@
+html {
+  box-sizing: border-box;
+}
+
+*,::after,::before {
+  box-sizing: inherit;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  font-size: 3em;
+  height: 60px;
+  width: 300px;
+}
